@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   content: [
     "./assets/**/*.{vue,js,css}",
@@ -11,6 +14,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      "jakarta-sans": [
+        "Plus Jakarta Sans",
+        "Helvetica",
+        ...defaultTheme.fontFamily.sans,
+      ],
+    },
   },
   plugins: [],
 }

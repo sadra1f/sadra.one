@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-jakarta-sans">
     <slot />
   </div>
 </template>

@@ -5,7 +5,18 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
-      link: [],
+      link: [
+        { href: "https://fonts.googleapis.com", rel: "preconnect" },
+        {
+          href: "https://fonts.gstatic.com",
+          rel: "preconnect",
+          crossorigin: "anonymous",
+        },
+        {
+          href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;700&display=swap",
+          rel: "stylesheet",
+        },
+      ],
       meta: [
         { "http-equiv": "Content-Type", content: "text/html; charset=utf-8" },
         { name: "language", content: "English" },
