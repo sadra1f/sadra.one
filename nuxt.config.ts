@@ -28,6 +28,7 @@ export default defineNuxtConfig({
       noscript: [],
       script: [],
       style: [],
+      title: "Sadra Saderi",
     },
   },
   css: ["@/assets/css/main.css"],
