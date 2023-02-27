@@ -1,0 +1,72 @@
+* text=auto eol=lf
+
+*.bash text eol=lf
+*.bat text eol=crlf
+*.css text diff=css
+*.htm text diff=html
+*.html text diff=html
+*.js text
+*.json text
+*.jsx text
+*.less text
+*.sass text
+*.scm text
+*.scss text diff=css
+*.sh text eol=lf
+*.ts text
+*.tsx text
+*.xml text
+*.xhtml text diff=html
+
+*.cnf text
+*.conf text
+*.config text
+.editorconfig text
+.env text
+.gitattributes text
+.gitconfig text
+.htaccess text
+*.lock text -diff
+package.json text eol=lf
+package-lock.json text eol=lf -diff
+pnpm-lock.yaml text eol=lf -diff
+.prettierrc text
+yarn.lock text -diff
+*.toml text
+*.yaml text
+*.yml text
+browserslist text
+
+*.ttf binary
+*.eot binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+*.svg text
+# If you want to treat it as binary,
+# use the following line instead.
+#*.svg binary
+*.svgz binary
+*.tif binary
+*.tiff binary
+*.wbmp binary
+*.webp binary
+*.ai binary
+*.bmp binary
+*.eps binary
+*.gif binary
+*.gifv binary
+*.ico binary
+*.jng binary
+*.jp2 binary
+*.jpg binary
+*.jpeg binary
+*.jpx binary
+*.jxr binary
+*.pdf binary
+*.png binary
+*.psb binary
+*.psd binary
+
+*.*ignore text
