@@ -1,14 +1,23 @@
 <template>
   <div class="flex flex-col w-screen h-screen justify-center items-center">
-    <div class="container text-center p-6 md:p-8">
+    <!-- prettier-ignore-attribute class -->
+    <div
+      class="flex flex-col p-6 space-x-2 text-center
+        md:flex-row md:p-8 md:text-start"
+    >
+      <!-- prettier-ignore-attribute class -->
       <img
-        class="w-44 mb-6 mx-auto rounded-lg border"
+        class="w-48 mx-auto mb-4 rounded-lg border border-neutral-200
+          md:w-16
+          dark:border-neutral-700"
         src="https://github.com/Sadra1f.png"
         alt="Image"
       />
 
-      <h1 class="font-bold text-4xl">Sadra Saderi</h1>
-      <p>Web Developer / Computer Engineering Student</p>
+      <div>
+        <h1 class="font-bold text-4xl">Sadra Saderi</h1>
+        <p>Web Developer / Computer Engineering Student</p>
+      </div>
     </div>
 
     <!-- prettier-ignore-attribute class -->
