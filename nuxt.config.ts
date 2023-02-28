@@ -29,9 +29,11 @@ export default defineNuxtConfig({
       script: [],
       style: [],
       title: "Sadra Saderi",
+      titleTemplate: "%siteName",
     },
   },
   css: ["@/assets/css/main.css"],
+  extends: ["nuxt-seo-kit"],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -42,6 +44,16 @@ export default defineNuxtConfig({
     options: {
       strict: false,
     },
+  },
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://sadra.one",
+      siteName: "Sadra Saderi",
+      siteDescription: "Web Developer / Computer Engineering Student",
+      language: "en",
+      trailingSlash: true,
+    },
+    inindexable: true,
   },
   ssr: true,
   telemetry: false,
