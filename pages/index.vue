@@ -7,8 +7,8 @@
     >
       <!-- prettier-ignore-attribute class -->
       <img
-        class="w-48 mx-auto mb-4 rounded-lg border border-neutral-200
-          md:w-16
+        class="w-48 h-48 mx-auto mb-4 rounded-lg border border-neutral-200
+          md:w-16 md:h-16
           dark:border-neutral-700"
         src="https://github.com/Sadra1f.png"
         alt="Image"
