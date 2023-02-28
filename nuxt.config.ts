@@ -57,4 +57,7 @@ export default defineNuxtConfig({
   },
   ssr: true,
   telemetry: false,
+  unhead: {
+    ogTitleTemplate: "%s",
+  },
 })
