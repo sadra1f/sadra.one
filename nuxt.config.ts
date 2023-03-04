@@ -53,7 +53,7 @@ export default defineNuxtConfig({
       language: "en",
       trailingSlash: true,
     },
-    inindexable: true,
+    indexable: true,
   },
   ssr: true,
   telemetry: false,
