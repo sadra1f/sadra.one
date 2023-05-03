@@ -1,9 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-/* eslint-disable @typescript-eslint/no-var-requires */
+import type { Config } from "tailwindcss"
+import defaultTheme from "tailwindcss/defaultTheme"
 
-const defaultTheme = require("tailwindcss/defaultTheme")
-
-module.exports = {
+export default {
   content: [
     "./assets/**/*.{vue,js,css}",
     "./components/**/*.{js,vue,ts}",
@@ -23,5 +21,4 @@ module.exports = {
       ],
     },
   },
-  plugins: [],
-}
+} satisfies Config
