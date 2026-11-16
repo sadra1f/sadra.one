@@ -1,22 +1,20 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: [
+    "@nuxt/eslint", //
+    "@nuxt/fonts",
+    "@nuxt/ui",
+    "@nuxtjs/seo",
+    "@vueuse/nuxt/module",
+  ],
   app: {
     head: {
       htmlAttrs: {
         lang: "en",
       },
-      link: [
-        { href: "https://fonts.googleapis.com", rel: "preconnect" },
-        {
-          href: "https://fonts.gstatic.com",
-          rel: "preconnect",
-          crossorigin: "anonymous",
-        },
-        {
-          href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;700&display=swap",
-          rel: "stylesheet",
-        },
-      ],
+      link: [],
       meta: [
         { "http-equiv": "Content-Type", content: "text/html; charset=utf-8" },
         { name: "language", content: "English" },
@@ -32,13 +30,25 @@ export default defineNuxtConfig({
       titleTemplate: "%siteName",
     },
   },
-  css: ["@/assets/css/main.css"],
-  extends: ["nuxt-seo-kit"],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
+  compatibilityDate: "2025-07-15",
+  devtools: { enabled: true },
+  components: [
+    // TODO: There is a bug in Nuxt (or current config) that includes paths
+    //       in parenthesis in the component name. Remove this part after fix.
+    {
+      path: "~/components",
+      pathPrefix: false,
     },
+  ],
+  css: ["~/assets/css/main.css"],
+  fonts: {
+    provider: "local",
+  },
+  ui: {
+    colorMode: false,
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
   router: {
     options: {
@@ -57,7 +67,4 @@ export default defineNuxtConfig({
   },
   ssr: true,
   telemetry: false,
-  unhead: {
-    ogTitleTemplate: "%s",
-  },
-})
+});

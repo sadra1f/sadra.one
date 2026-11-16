@@ -1,5 +1,10 @@
 {
-  "editorconfig": true,
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "plugins": ["prettier-plugin-tailwindcss"],
   "endOfLine": "lf",
-  "semi": false
+  "semi": true,
+  "tabWidth": 2,
+  "singleQuote": false,
+  "printWidth": 100,
+  "trailingComma": "all"
 }

@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --font-default: "Vazirmatn", "Inter", var(--font-sans);
+}
+
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+
+  @media (width < 40rem) {
+    padding-inline: 1rem;
+  }
+
+  @media (width >= 40rem) {
+    max-width: 37.5rem;
+  }
+
+  @media (width >= 48rem) {
+    max-width: 45.5rem;
+  }
+
+  @media (width >= 64rem) {
+    max-width: 61.5rem;
+  }
+
+  @media (width >= 80rem) {
+    max-width: 77.5rem;
+  }
+
+  @media (width >= 88rem) {
+    max-width: 78rem;
+  }
+}
+
+@utility font-features-none {
+  font-feature-settings: normal;
+}
+
+@utility tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+html,
+body {
+  @apply font-default scroll-smooth;
+}
