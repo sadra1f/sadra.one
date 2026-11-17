@@ -1,0 +1,59 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="240"
+  height="240"
+  viewBox="0 0 240 240"
+  fill="none"
+  role="img"
+  aria-labelledby="ar-title"
+>
+  <title id="ar-title">Unity</title>
+  <defs>
+    <pattern id="dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#171717" />
+    </pattern>
+    <pattern id="light-dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#fff" />
+    </pattern>
+    <path id="cube-top" d="M120 20 199.92 66.08 120 112.16 40.08 66.08 120 20Z" />
+    <path id="cube-side" d="M40.08 66.08 120 112.16v92.16l-79.92-46.08V66.08Z" />
+    <path id="cube-right" d="m120 112.16 79.92-46.08v92.16L120 204.32v-92.16Z" />
+    <path
+      id="symbol-top"
+      d="m68.16 81.92 47.52-26.64v20.88L96.24 87.68 120 101.36l23.76-13.68-19.44-11.52V55.28l47.52 26.64L120 112.16 68.16 81.92Z"
+    />
+    <path
+      id="symbol-left"
+      d="M68.16 81.92 120 112.16v59.76l-47.52-27.36 18.72-11.52 17.28 11.52q2.16 1.44 2.16-1.44v-25.2l-22.32-12.96q-2.16-1.44-2.16 1.44v20.16l-18 10.08V81.92Z"
+    />
+    <path
+      id="symbol-right"
+      d="m120 112.16 51.84-30.24v54.72l-18-10.08V106.4q0-2.88-2.16-1.44l-22.32 12.96v25.2q0 2.88 2.16 1.44l17.28-11.52 18.72 11.52L120 171.92v-59.76Z"
+    />
+    <clipPath id="cube-surfaces">
+      <use href="#cube-top" />
+      <use href="#cube-side" />
+      <use href="#cube-right" />
+    </clipPath>
+    <clipPath id="symbol-surfaces">
+      <use href="#symbol-top" />
+      <use href="#symbol-left" />
+      <use href="#symbol-right" />
+    </clipPath>
+  </defs>
+  <ellipse cx="120" cy="210" rx="69" ry="9" fill="url(#dots)" opacity=".14" />
+  <use href="#cube-top" fill="#666" />
+  <use href="#cube-side" fill="#454545" />
+  <use href="#cube-right" fill="#242424" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#light-dots)"
+    opacity=".2"
+    clip-path="url(#cube-surfaces)"
+  />
+  <use href="#symbol-top" fill="#e9e9e9" />
+  <use href="#symbol-left" fill="#e9e9e9" />
+  <use href="#symbol-right" fill="#d2d2d2" />
+  <rect width="240" height="240" fill="url(#dots)" opacity=".5" clip-path="url(#symbol-surfaces)" />
+</svg>

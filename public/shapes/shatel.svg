@@ -1,0 +1,50 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="240"
+  height="240"
+  viewBox="0 0 240 240"
+  fill="none"
+  role="img"
+  aria-labelledby="shatel-title"
+>
+  <title id="shatel-title">Shatel</title>
+  <defs>
+    <pattern id="dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#171717" />
+    </pattern>
+    <pattern id="light-dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#fff" />
+    </pattern>
+    <path
+      d="M349.896 0C350.036 0 350.186 0.003 350.346 0.01C350.699 0.03 350.959 0.193 351.126 0.5L699.616 642.81C699.887 643.308 699.877 643.913 699.587 644.401C699.298 644.889 698.773 645.189 698.206 645.19L543.876 645.19C542.735 645.189 541.684 644.564 541.136 643.56C481.409 533.5 418.446 417.437 352.246 295.37C351.186 293.423 350.476 292.177 350.116 291.63C350.089 291.597 350.056 291.573 350.016 291.56C349.983 291.547 349.946 291.54 349.906 291.54C349.859 291.54 349.819 291.547 349.786 291.56C349.746 291.573 349.713 291.597 349.686 291.63C349.326 292.177 348.616 293.423 347.556 295.37C281.363 417.437 218.403 533.503 158.676 643.57C158.128 644.574 157.077 645.199 155.936 645.2L1.606 645.2C1.039 645.199 0.514 644.899 0.225 644.411C-0.064 643.923 -0.075 643.318 0.196 642.82L348.676 0.5C348.843 0.193 349.103 0.03 349.456 0.01C349.616 0.003 349.763 0 349.896 0Z"
+      fill-rule="nonzero"
+      id="shatel-chevron"
+      transform="translate(30.774 33.713) scale(.255) matrix(1 0 0 1 0 0)"
+    />
+    <clipPath id="shatel-chevron-surface"><use href="#shatel-chevron" /></clipPath>
+    <path
+      d="M194.6 96C194.6 137.59 167.457 174.449 127.367 187.301C87.278 200.153 43.36 186.074 18.583 152.427C-6.194 118.781 -6.194 73.219 18.583 39.573C43.36 5.926 87.278 -8.153 127.367 4.699C167.457 17.551 194.6 54.41 194.6 96"
+      fill-rule="nonzero"
+      id="shatel-dot"
+      transform="translate(30.774 33.713) scale(.255) matrix(-0.00698126 0.999976 -0.999976 -0.00698126 446.513 450.813)"
+    />
+    <clipPath id="shatel-dot-surface"><use href="#shatel-dot" /></clipPath>
+  </defs>
+  <ellipse cx="120" cy="210" rx="69" ry="9" fill="url(#dots)" opacity=".14" />
+  <use href="#shatel-chevron" fill="#666" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#light-dots)"
+    opacity=".2"
+    clip-path="url(#shatel-chevron-surface)"
+  />
+  <use href="#shatel-dot" fill="#d2d2d2" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#dots)"
+    opacity=".5"
+    clip-path="url(#shatel-dot-surface)"
+  />
+</svg>

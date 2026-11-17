@@ -14,20 +14,31 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
-      link: [],
-      meta: [
-        { "http-equiv": "Content-Type", content: "text/html; charset=utf-8" },
-        { name: "language", content: "English" },
-        {
-          name: "viewport",
-          content: "width=device-width, initial-scale=1",
-        },
-      ],
-      noscript: [],
-      script: [],
-      style: [],
       title: "Sadra Saderi",
-      titleTemplate: "%siteName",
+      titleTemplate: "%s — %siteName",
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+    },
+  },
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || "https://sadra.one",
+    name: "Sadra Saderi",
+    description: "Web Developer / Computer Engineering Student",
+    defaultLocale: "en",
+    trailingSlash: true,
+  },
+  seo: {
+    // Preserve route casing and omit query parameters from canonical URLs.
+    canonicalLowercase: false,
+    canonicalQueryWhitelist: [],
+    meta: {
+      ogImage: "/images/portrait.webp",
+      ogImageAlt: "Sadra Saderi",
+      ogImageWidth: 1100,
+      ogImageHeight: 1200,
+      ogImageType: "image/webp",
+      twitterCard: "summary_large_image",
+      twitterImage: "/images/portrait.webp",
+      twitterImageAlt: "Sadra Saderi",
     },
   },
   compatibilityDate: "2025-07-15",
@@ -54,16 +65,6 @@ export default defineNuxtConfig({
     options: {
       strict: false,
     },
-  },
-  runtimeConfig: {
-    public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://sadra.one",
-      siteName: "Sadra Saderi",
-      siteDescription: "Web Developer / Computer Engineering Student",
-      language: "en",
-      trailingSlash: true,
-    },
-    indexable: true,
   },
   ssr: true,
   telemetry: false,

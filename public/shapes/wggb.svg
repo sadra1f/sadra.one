@@ -1,0 +1,76 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="240"
+  height="240"
+  viewBox="0 0 240 240"
+  fill="none"
+  role="img"
+  aria-labelledby="wggb-title"
+>
+  <title id="wggb-title">WGGB goose</title>
+  <defs>
+    <pattern id="dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#171717" />
+    </pattern>
+    <pattern id="light-dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#fff" />
+    </pattern>
+    <path
+      d="M69 389C66 348 68 299 72 255L77 174C80 130 89 95 105 69 120 44 144 35 176 34 202 33 225 37 234 49 239 56 242 67 241 77 250 83 248 100 253 112 260 128 284 146 295 159 306 172 302 183 289 187 281 190 276 187 270 187L231 181C215 179 208 187 205 198 201 220 198 244 195 264L185 389Z"
+      id="wggb-silhouette"
+      transform="translate(29.4 19.16) scale(.49)"
+    />
+    <clipPath id="wggb-silhouette-surface"><use href="#wggb-silhouette" /></clipPath>
+    <path
+      d="M74 259C77 229 78 198 81 170 84 128 93 94 109 70 123 48 145 40 176 39 200 38 222 42 230 52 235 58 237 66 237 74 227 79 219 79 212 77 202 75 198 79 196 87 192 106 192 130 188 140 186 145 180 145 181 149 189 152 191 160 189 170L218 176C209 180 202 186 201 199L193 259C178 247 162 234 150 227 146 224 144 226 146 230 153 237 148 244 142 248 136 252 128 245 125 251 122 256 125 269 120 272 114 278 115 263 107 260 96 255 84 256 74 259Z"
+      id="wggb-face"
+      transform="translate(29.4 19.16) scale(.49)"
+    />
+    <clipPath id="wggb-face-surface"><use href="#wggb-face" /></clipPath>
+    <path
+      d="M148 78C146 69 152 65 160 69 167 69 172 74 172 81 175 88 169 91 163 91 154 91 149 86 148 78Z"
+      id="wggb-eye"
+      transform="translate(29.4 19.16) scale(.49)"
+    />
+    <clipPath id="wggb-eye-surface"><use href="#wggb-eye" /></clipPath>
+    <path
+      d="M127 204C130 193 137 190 142 195 149 201 139 210 139 217 138 225 123 216 127 204Z"
+      id="wggb-neck-spot"
+      transform="translate(29.4 19.16) scale(.49)"
+    />
+    <clipPath id="wggb-neck-spot-surface"><use href="#wggb-neck-spot" /></clipPath>
+  </defs>
+  <ellipse cx="120" cy="210" rx="69" ry="9" fill="url(#dots)" opacity=".14" />
+  <use href="#wggb-silhouette" fill="#242424" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#light-dots)"
+    opacity=".2"
+    clip-path="url(#wggb-silhouette-surface)"
+  />
+  <use href="#wggb-face" fill="#e9e9e9" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#dots)"
+    opacity=".5"
+    clip-path="url(#wggb-face-surface)"
+  />
+  <use href="#wggb-eye" fill="#242424" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#light-dots)"
+    opacity=".2"
+    clip-path="url(#wggb-eye-surface)"
+  />
+  <use href="#wggb-neck-spot" fill="#242424" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#light-dots)"
+    opacity=".2"
+    clip-path="url(#wggb-neck-spot-surface)"
+  />
+</svg>

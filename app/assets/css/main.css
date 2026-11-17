@@ -3,6 +3,23 @@
 
 @theme {
   --font-default: "Vazirmatn", "Inter", var(--font-sans);
+  --font-editorial: "Georgia", "Times New Roman", serif;
+
+  --color-portfolio-paper: #ffffff;
+  --color-portfolio-ink: #171717;
+  --color-portfolio-muted: #606060;
+  --color-portfolio-soft: #767676;
+  --color-portfolio-surface: #f7f7f7;
+  --color-portfolio-border: #dedede;
+  --color-portfolio-hatch: #e4e4e4;
+  --color-portfolio-hatch-muted: #e9e9e9;
+  --color-portfolio-dot: #d4d4d4;
+  --color-portfolio-dot-strong: #cccccc;
+  --color-portfolio-label: #454545;
+  --color-portfolio-ink-hover: #343434;
+  --color-portfolio-control-border: #d2d2d2;
+  --color-portfolio-control-surface: #f4f4f4;
+  --color-portfolio-control-hover: #ededed;
 }
 
 @utility container {
@@ -46,4 +63,342 @@
 html,
 body {
   @apply font-default scroll-smooth;
+}
+
+.portfolio-page {
+  --panel-padding: clamp(1.5rem, 4.5vw, 3.5rem);
+  @apply bg-portfolio-paper text-portfolio-ink relative overflow-x-clip scheme-light;
+}
+
+.portfolio-page::before {
+  @apply border-portfolio-border pointer-events-none absolute inset-x-0 top-36 h-124 border-y bg-[repeating-linear-gradient(125deg,transparent_0_4px,var(--color-portfolio-hatch-muted)_4px_5px)] content-[''];
+}
+
+.site-shell {
+  @apply border-portfolio-border relative z-1 mx-auto min-h-svh w-[calc(100%-2*clamp(0.75rem,5vw,5rem))] max-w-296 border-x bg-white;
+}
+
+.site-header {
+  @apply min-h-18 px-[clamp(1rem,3vw,2rem)] py-3;
+}
+
+.site-header::before,
+.site-footer::before {
+  @apply bg-portfolio-border pointer-events-none absolute left-1/2 h-px w-screen transform-[translateX(-50%)] content-[''];
+}
+
+.site-header::before {
+  @apply bottom-0;
+}
+
+.site-footer {
+  @apply relative px-[clamp(1rem,3vw,2rem)] py-5;
+}
+
+.site-footer::before {
+  @apply top-0;
+}
+
+.frame-section {
+  @apply border-portfolio-border relative border-t;
+}
+
+.frame-section::before,
+.frame-section::after {
+  @apply border-portfolio-border pointer-events-none absolute -top-1 z-2 size-1.75 border bg-white content-[''];
+}
+
+.frame-section::before {
+  @apply -left-1;
+}
+
+.frame-section::after {
+  @apply -right-1;
+}
+
+.section-panel {
+  @apply p-(--panel-padding);
+}
+
+.hatch-strip {
+  @apply border-portfolio-border h-6 border-y bg-[repeating-linear-gradient(125deg,transparent_0_4px,var(--color-portfolio-hatch)_4px_5px)];
+}
+
+.hatch-strip + .frame-section {
+  @apply border-t-0;
+}
+
+.home-hero {
+  @apply grid bg-[radial-gradient(var(--color-portfolio-dot)_0.6px,transparent_0.6px)] bg-size-[7px_7px] bg-top;
+}
+
+.hero-copy {
+  @apply relative z-1 min-w-0 self-center px-(--panel-padding) py-[clamp(2.5rem,5vw,4.5rem)] text-left;
+}
+
+.hero-heading {
+  @apply text-[clamp(2.5rem,4.2vw,3.75rem)] leading-[1.05] font-medium tracking-[-0.055em] text-balance;
+}
+
+.hero-description {
+  @apply mx-0 mt-5 mb-0 max-w-124 text-pretty;
+}
+
+.hero-portrait {
+  @apply border-portfolio-border flex min-w-0 items-end justify-center overflow-hidden border-t;
+}
+
+.hero-portrait-image {
+  @apply block h-auto max-h-128 w-full object-contain object-bottom grayscale;
+}
+
+@media (min-width: 768px) {
+  .home-hero {
+    @apply min-h-128 grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)];
+  }
+
+  .hero-portrait {
+    @apply border-portfolio-border border-t-0 border-l;
+  }
+}
+
+.mobile-navigation {
+  @apply shadow-[0_8px_0] shadow-black/2.5;
+}
+
+.portfolio-page ::selection {
+  @apply bg-portfolio-ink text-white;
+}
+
+.portfolio-page :is(a, button):focus-visible {
+  @apply outline-portfolio-ink outline-2 outline-offset-5 outline-solid;
+}
+
+.skip-link {
+  @apply bg-portfolio-ink absolute top-3 left-4 z-50 transform-[translateY(-200%)] rounded-none px-5 py-3 text-white;
+}
+
+.skip-link:focus {
+  @apply transform-[translateY(0)];
+}
+
+.nav-link {
+  @apply text-portfolio-muted inline-flex min-h-11 items-center text-sm transition-[color,border-color] duration-180 ease-[ease];
+}
+
+.nav-link:hover,
+.nav-link-active {
+  @apply text-portfolio-ink;
+}
+
+.nav-link-active {
+  @apply font-semibold;
+}
+
+.hero-surface {
+  @apply bg-portfolio-surface bg-[radial-gradient(var(--color-portfolio-dot-strong)_0.6px,transparent_0.6px)] bg-size-[6px_6px];
+}
+
+.portrait-frame {
+  @apply border-portfolio-border border;
+}
+
+.eyebrow {
+  @apply border-portfolio-border text-portfolio-label inline-flex max-w-full items-center gap-2 border bg-white px-1.5 py-1 text-[0.625rem] leading-[1.4] font-medium tracking-[0.09em] uppercase;
+}
+
+.eyebrow::before {
+  @apply size-1.25 shrink-0 bg-current content-[''];
+}
+
+.section-heading,
+.page-heading {
+  @apply font-editorial font-medium tracking-[-0.045em] text-balance;
+}
+
+.section-heading {
+  @apply text-[clamp(1.875rem,3.5vw,2.5rem)] leading-[1.15];
+}
+
+.page-intro {
+  @apply bg-[radial-gradient(var(--color-portfolio-border)_0.6px,transparent_0.6px)] bg-size-[7px_7px] px-(--panel-padding) py-[clamp(3rem,6vw,5rem)];
+}
+
+.page-heading {
+  @apply text-[clamp(2.625rem,6vw,4rem)] leading-[1.08];
+}
+
+.page-description {
+  @apply text-portfolio-muted mt-5 max-w-xl text-base leading-[1.85];
+}
+
+.project-filters,
+.project-group-heading {
+  @apply px-(--panel-padding) py-7;
+}
+
+.project-empty {
+  @apply bg-portfolio-surface px-(--panel-padding) py-[clamp(2.5rem,5vw,4rem)];
+}
+
+.project-art {
+  @apply text-portfolio-ink flex min-h-84 flex-col items-start gap-4 bg-white;
+}
+
+.project-object {
+  @apply h-60 w-[min(80%,15rem)] self-center object-contain;
+}
+
+.project-caption {
+  @apply mt-auto flex w-full items-center justify-between gap-4;
+}
+
+.featured-projects,
+.interests-grid {
+  @apply border-portfolio-border border-t;
+}
+
+.project-cell,
+.interest-cell,
+.project-showcase,
+.project-details {
+  @apply min-w-0 p-[clamp(1.5rem,3.5vw,2.5rem)];
+}
+
+.project-showcase {
+  @apply min-h-108;
+}
+
+.interest-cell + .interest-cell,
+.project-cell + .project-cell {
+  @apply border-portfolio-border border-t;
+}
+
+.project-details {
+  @apply self-center;
+}
+
+.site-contact {
+  @apply bg-portfolio-surface;
+}
+
+.site-contact::before,
+.site-contact::after {
+  @apply bg-white;
+}
+
+@media (min-width: 640px) {
+  .project-cell + .project-cell {
+    @apply border-portfolio-border border-t-0 border-l;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-showcase {
+    @apply border-portfolio-border border-r;
+  }
+
+  .interest-cell + .interest-cell {
+    @apply border-portfolio-border border-t-0 border-l;
+  }
+}
+
+.technology-tag {
+  @apply text-portfolio-muted border-portfolio-border border px-2.5 py-1.5 text-xs leading-normal;
+}
+
+.resume-section {
+  @apply border-portfolio-border mt-8 border-t pt-6;
+}
+
+.sample-notice {
+  @apply bg-portfolio-surface mx-(--panel-padding) my-6;
+}
+
+.resume-heading {
+  @apply font-editorial mb-5 text-2xl leading-tight tracking-tight;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  html,
+  body,
+  .portfolio-page {
+    @apply bg-white font-[sans-serif] text-black;
+  }
+
+  .site-header,
+  .site-contact,
+  .site-footer,
+  .skip-link,
+  .resume-intro {
+    @apply hidden!;
+  }
+
+  .portfolio-page > .site-shell {
+    @apply min-h-0 w-full max-w-none border-0 p-0;
+  }
+
+  .frame-section::before,
+  .frame-section::after,
+  .portfolio-page::before {
+    @apply hidden;
+  }
+
+  .resume-document {
+    @apply mt-[5mm] rounded-none border-0 p-0;
+  }
+
+  .sample-notice {
+    @apply m-0 p-[3mm];
+  }
+
+  .resume-document > header {
+    @apply pb-[4mm];
+  }
+
+  .resume-section {
+    @apply mt-[5mm] border-0 pt-0;
+  }
+
+  .resume-heading {
+    @apply mb-[3mm] break-after-avoid;
+  }
+
+  .resume-entry {
+    @apply break-inside-avoid;
+  }
+
+  .resume-document :is(p, li, a) {
+    @apply text-[10pt] leading-normal text-black;
+  }
+
+  .resume-contact {
+    @apply mt-[3mm] gap-x-[5mm] gap-y-[2mm];
+  }
+
+  .resume-entry + .resume-entry {
+    @apply mt-[4mm];
+  }
+
+  .technology-tag {
+    @apply px-[2mm] py-[1mm];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    @apply scroll-auto;
+  }
+
+  .portfolio-page *,
+  .portfolio-page *::before,
+  .portfolio-page *::after {
+    @apply animate-none! scroll-auto! transition-none!;
+  }
 }
