@@ -1,63 +1,86 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: [
+    "@nuxt/eslint", //
+    "@nuxt/fonts",
+    "@nuxt/ui",
+    "@nuxtjs/seo",
+    "@vueuse/nuxt/module",
+  ],
   app: {
     head: {
       htmlAttrs: {
         lang: "en",
       },
-      link: [
-        { href: "https://fonts.googleapis.com", rel: "preconnect" },
-        {
-          href: "https://fonts.gstatic.com",
-          rel: "preconnect",
-          crossorigin: "anonymous",
-        },
-        {
-          href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;700&display=swap",
-          rel: "stylesheet",
-        },
-      ],
-      meta: [
-        { "http-equiv": "Content-Type", content: "text/html; charset=utf-8" },
-        { name: "language", content: "English" },
-        {
-          name: "viewport",
-          content: "width=device-width, initial-scale=1",
-        },
-      ],
-      noscript: [],
-      script: [],
-      style: [],
       title: "Sadra Saderi",
-      titleTemplate: "%siteName",
+      titleTemplate: "%s — %siteName",
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
     },
   },
-  css: ["@/assets/css/main.css"],
-  extends: ["nuxt-seo-kit"],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || "https://sadra.one",
+    name: "Sadra Saderi",
+    description: "Web Developer / Computer Engineering Student",
+    defaultLocale: "en",
+    trailingSlash: true,
+  },
+  seo: {
+    // Preserve route casing and omit query parameters from canonical URLs.
+    canonicalLowercase: false,
+    canonicalQueryWhitelist: [],
+  },
+  experimental: {
+    defaults: {
+      nuxtLink: { trailingSlash: "append" },
     },
+  },
+  ogImage: {
+    componentDirs: ["seo"],
+  },
+  compatibilityDate: "2025-07-15",
+  devtools: { enabled: true },
+  components: [
+    // TODO: There is a bug in Nuxt (or current config) that includes paths
+    //       in parenthesis in the component name. Remove this part after fix.
+    {
+      path: "~/components",
+      pathPrefix: false,
+    },
+  ],
+  css: ["~/assets/css/main.css"],
+  fonts: {
+    providers: {
+      adobe: false,
+      bunny: false,
+      fontshare: false,
+      fontsource: false,
+      google: false,
+      googleicons: false,
+    },
+    npm: { remote: false },
+    families: [
+      { name: "Inter Variable", provider: "npm", global: true },
+      { name: "Libre Baskerville Variable", provider: "npm", global: true },
+    ],
+  },
+  ui: {
+    colorMode: false,
+  },
+  icon: {
+    clientBundle: {
+      scan: { globInclude: ["app/**/*.{vue,ts}"] },
+    },
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
   router: {
     options: {
       strict: false,
     },
   },
-  runtimeConfig: {
-    public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://sadra.one",
-      siteName: "Sadra Saderi",
-      siteDescription: "Web Developer / Computer Engineering Student",
-      language: "en",
-      trailingSlash: true,
-    },
-    indexable: true,
-  },
   ssr: true,
   telemetry: false,
-  unhead: {
-    ogTitleTemplate: "%s",
-  },
-})
+});

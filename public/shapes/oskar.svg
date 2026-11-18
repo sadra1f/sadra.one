@@ -1,0 +1,87 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="240"
+  height="240"
+  viewBox="0 0 240 240"
+  fill="none"
+  role="img"
+  aria-labelledby="oskar-title"
+>
+  <title id="oskar-title">Oskar dolphin</title>
+  <defs>
+    <pattern id="dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#171717" />
+    </pattern>
+    <pattern id="light-dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#fff" />
+    </pattern>
+    <path
+      d="M96 52 57 30C107 4 159-6 202 12 232 25 252 45 266 67L215 58C174 47 133 46 96 52Z"
+      id="oskar-dorsal-fin"
+      transform="translate(31.9 27.4) scale(.58)"
+    />
+    <clipPath id="oskar-dorsal-fin-surface"><use href="#oskar-dorsal-fin" /></clipPath>
+    <path
+      d="M53 173C42 123 68 65 111 43 151 17 207 22 246 48 278 68 297 101 305 136 276 102 248 87 215 90 164 91 133 127 126 164 120 197 139 235 172 254 199 271 224 268 250 258 240 269 230 273 219 276 228 283 237 294 244 305 229 291 211 279 193 279 146 284 103 267 77 232 64 214 56 193 53 173Z"
+      id="oskar-body"
+      transform="translate(31.9 27.4) scale(.58)"
+    />
+    <clipPath id="oskar-body-surface"><use href="#oskar-body" /></clipPath>
+    <path
+      d="M305 136C276 102 248 87 215 90 164 91 133 127 126 164 120 197 139 235 172 254 199 271 224 268 250 258 240 269 230 273 219 276 228 283 237 294 244 305 229 291 211 279 193 279 158 271 135 248 118 218 96 179 101 135 127 103 153 71 187 57 222 60 262 63 291 94 305 136Z"
+      id="oskar-inner-curve"
+      transform="translate(31.9 27.4) scale(.58)"
+    />
+    <clipPath id="oskar-inner-curve-surface"><use href="#oskar-inner-curve" /></clipPath>
+    <path
+      d="M115 151C94 179 62 211 3 227 20 208 39 186 53 169 75 172 94 164 115 151Z"
+      id="oskar-pectoral-fin"
+      transform="translate(31.9 27.4) scale(.58)"
+    />
+    <clipPath id="oskar-pectoral-fin-surface"><use href="#oskar-pectoral-fin" /></clipPath>
+  </defs>
+  <ellipse cx="120" cy="210" rx="69" ry="9" fill="url(#dots)" opacity=".14" />
+  <use href="#oskar-dorsal-fin" fill="#666" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#light-dots)"
+    opacity=".2"
+    clip-path="url(#oskar-dorsal-fin-surface)"
+  />
+  <use href="#oskar-body" fill="#d2d2d2" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#dots)"
+    opacity=".5"
+    clip-path="url(#oskar-body-surface)"
+  />
+  <use href="#oskar-inner-curve" fill="#666" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#light-dots)"
+    opacity=".2"
+    clip-path="url(#oskar-inner-curve-surface)"
+  />
+  <use href="#oskar-pectoral-fin" fill="#454545" />
+  <rect
+    width="240"
+    height="240"
+    fill="url(#light-dots)"
+    opacity=".2"
+    clip-path="url(#oskar-pectoral-fin-surface)"
+  />
+  <path
+    d="M174 65.1c-3.8 4.2-1.1 7 2.2 7.5 2.3.4 4.1-.4 5.1-2.1-3.4-.5-5.8-2.2-7.3-5.4Z"
+    fill="#fff"
+  />
+  <path
+    d="M70 92c9-22 27-36 49-40"
+    stroke="#fff"
+    stroke-opacity=".15"
+    stroke-width="1"
+    stroke-linecap="round"
+  />
+</svg>

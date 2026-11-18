@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <pattern id="dots" width="3.5" height="3.5" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#171717" />
+    </pattern>
+    <pattern
+      id="lines"
+      width="3"
+      height="3"
+      patternUnits="userSpaceOnUse"
+      patternTransform="rotate(35)"
+    >
+      <path d="M0 0V3" stroke="#fff" stroke-width=".6" />
+    </pattern>
+  </defs>
+  <ellipse cx="124" cy="207" rx="73" ry="10" fill="url(#dots)" opacity=".13" />
+  <path d="m120 28 79 48v91l-79 47-79-47V76l79-48Z" fill="url(#dots)" opacity=".14" />
+  <path d="m120 37 72 43-72 44-72-44 72-43Z" fill="#d2d2d2" />
+  <path d="m120 124 72-44v83l-72 43v-82Z" fill="#1e1e1e" />
+  <path d="m48 80 72 44v82l-72-43V80Z" fill="#e9e9e9" />
+  <path d="m120 37 72 43-72 44-72-44 72-43Z" fill="url(#dots)" opacity=".5" />
+  <path d="m120 124 72-44v83l-72 43v-82Z" fill="url(#lines)" opacity=".6" />
+  <path d="m48 80 72 44v82l-72-43V80Z" fill="url(#dots)" opacity=".5" />
+  <path d="m120 37 72 43v83l-72 43-72-43V80l72-43Z" stroke="#555" stroke-opacity=".15" />
+</svg>
