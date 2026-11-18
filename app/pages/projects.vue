@@ -117,11 +117,14 @@ function selectType(type: ProjectType | "all") {
           :aria-labelledby="`project-${project.number}`"
           class="project-row frame-section grid md:grid-cols-2 md:items-stretch"
         >
-          <a
-            :href="project.link"
-            rel="nofollow"
+          <component
+            :is="project.link ? 'a' : 'div'"
+            :href="project.link || undefined"
+            :rel="project.link ? 'nofollow' : undefined"
             class="project-art project-showcase group"
-            :aria-label="`${project.linkLabel}: ${project.name}`"
+            :aria-label="
+              project.link ? `${project.linkLabel || 'View link'}: ${project.name}` : undefined
+            "
           >
             <span class="eyebrow project-label">{{ project.year }}</span>
             <img
@@ -138,12 +141,13 @@ function selectType(type: ProjectType | "all") {
                 {{ project.headline || project.name }}
               </span>
               <UIcon
+                v-if="project.link"
                 name="i-lucide-arrow-up-right"
                 class="size-5 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
                 aria-hidden="true"
               />
             </span>
-          </a>
+          </component>
           <div class="project-details">
             <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
               <p class="eyebrow">{{ project.category }}</p>

@@ -31,6 +31,11 @@ export default defineNuxtConfig({
     canonicalLowercase: false,
     canonicalQueryWhitelist: [],
   },
+  experimental: {
+    defaults: {
+      nuxtLink: { trailingSlash: "append" },
+    },
+  },
   ogImage: {
     componentDirs: ["seo"],
   },
@@ -62,6 +67,11 @@ export default defineNuxtConfig({
   },
   ui: {
     colorMode: false,
+  },
+  icon: {
+    clientBundle: {
+      scan: { globInclude: ["app/**/*.{vue,ts}"] },
+    },
   },
   vite: {
     plugins: [tailwindcss()],
