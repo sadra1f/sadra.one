@@ -2,8 +2,10 @@
 @import "@nuxt/ui";
 
 @theme {
-  --font-default: "Vazirmatn", "Inter", var(--font-sans);
-  --font-editorial: "Georgia", "Times New Roman", serif;
+  --font-default: "Vazirmatn", "Inter", "Inter Variable", var(--font-sans);
+  --font-editorial: "Georgia", "Times New Roman", "Libre Baskerville Variable", var(--font-serif);
+  --font-default-og: "Inter Variable", sans-serif;
+  --font-editorial-og: "Libre Baskerville Variable", serif;
 
   --color-portfolio-paper: #ffffff;
   --color-portfolio-ink: #171717;

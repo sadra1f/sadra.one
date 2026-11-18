@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { resume } from "~/data/resume";
 
-useSeoMeta({
+usePageSeo({
   title: "Resume",
   description:
     "Explore Sadra Saderi’s full stack software development experience, education, skills, and open-source projects.",

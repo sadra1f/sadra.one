@@ -2,7 +2,7 @@
 import { profile } from "~/data/profile";
 import { socialLinks } from "~/data/social-links";
 
-useSeoMeta({
+usePageSeo({
   title: profile.role,
   description:
     "Sadra Saderi, a software engineer with a focus on AI. Combining full-stack engineering experience with graduate studies in AI and Robotics.",

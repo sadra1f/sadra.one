@@ -2,7 +2,7 @@
 import { aboutParagraphs } from "~/data/about";
 import { profile } from "~/data/profile";
 
-useSeoMeta({
+usePageSeo({
   title: "About",
   description:
     "Get to know Sadra Saderi, a software engineer building web and mobile applications and pursuing a master’s in Computer Engineering, specializing in AI and Robotics.",

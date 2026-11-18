@@ -30,16 +30,9 @@ export default defineNuxtConfig({
     // Preserve route casing and omit query parameters from canonical URLs.
     canonicalLowercase: false,
     canonicalQueryWhitelist: [],
-    meta: {
-      ogImage: "/images/portrait.webp",
-      ogImageAlt: "Sadra Saderi",
-      ogImageWidth: 1100,
-      ogImageHeight: 1200,
-      ogImageType: "image/webp",
-      twitterCard: "summary_large_image",
-      twitterImage: "/images/portrait.webp",
-      twitterImageAlt: "Sadra Saderi",
-    },
+  },
+  ogImage: {
+    componentDirs: ["seo"],
   },
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
@@ -53,7 +46,19 @@ export default defineNuxtConfig({
   ],
   css: ["~/assets/css/main.css"],
   fonts: {
-    provider: "local",
+    providers: {
+      adobe: false,
+      bunny: false,
+      fontshare: false,
+      fontsource: false,
+      google: false,
+      googleicons: false,
+    },
+    npm: { remote: false },
+    families: [
+      { name: "Inter Variable", provider: "npm", global: true },
+      { name: "Libre Baskerville Variable", provider: "npm", global: true },
+    ],
   },
   ui: {
     colorMode: false,

@@ -3,7 +3,7 @@ import type { ProjectType } from "~/data/projects";
 import { projects } from "~/data/projects";
 import { projectTypes } from "~/data/project-types";
 
-useSeoMeta({
+usePageSeo({
   title: "Projects",
   description:
     "Explore Sadra Saderi’s projects, including open-source tools, client projects, and company contributions.",
