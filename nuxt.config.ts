@@ -1,5 +1,7 @@
 import tailwindcss from "@tailwindcss/vite";
 
+const baseURL = process.env.NUXT_APP_BASE_URL || "/";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -26,6 +28,13 @@ export default defineNuxtConfig({
     defaultLocale: "en",
     trailingSlash: true,
   },
+  robots: {
+    robotsTxt: baseURL === "/",
+  },
+  sitemap: {
+    // Automatic image discovery drops the deployment prefix from image URLs.
+    discoverImages: baseURL === "/",
+  },
   seo: {
     // Preserve route casing and omit query parameters from canonical URLs.
     canonicalLowercase: false,
@@ -38,6 +47,12 @@ export default defineNuxtConfig({
   },
   ogImage: {
     componentDirs: ["seo"],
+  },
+  nitro: {
+    prerender: {
+      // The homepage is already prerendered at /. Skip its prefixed duplicate.
+      ignore: baseURL === "/" ? [] : [(route) => route === baseURL],
+    },
   },
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
