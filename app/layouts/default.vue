@@ -3,6 +3,9 @@ import { profile } from "~/data/profile";
 import { socialLinks } from "~/data/social-links";
 
 const menuOpen = ref(false);
+const colorMode = useColorMode();
+const mounted = useMounted();
+const nextTheme = computed(() => (colorMode.value === "dark" ? "light" : "dark"));
 
 const route = useRoute();
 const header = useTemplateRef<HTMLElement>("header");
@@ -46,7 +49,7 @@ onKeyStroke("Escape", () => {
     <div class="site-shell">
       <header
         ref="header"
-        class="site-header relative z-20 flex items-center justify-between gap-4"
+        class="site-header relative z-20 flex items-center justify-between gap-2 sm:gap-4"
       >
         <NuxtLink
           to="/"
@@ -67,11 +70,20 @@ onKeyStroke("Escape", () => {
             {{ item.label }}
           </NuxtLink>
         </nav>
-        <div class="flex items-center gap-2">
+        <div class="flex shrink-0 items-center gap-1 sm:gap-2">
+          <SharedButton
+            variant="icon"
+            type="button"
+            :aria-label="mounted ? `Switch to ${nextTheme} mode` : 'Switch color theme'"
+            @click="colorMode.preference = nextTheme"
+          >
+            <UIcon name="i-lucide-moon" class="size-5 dark:hidden" aria-hidden="true" />
+            <UIcon name="i-lucide-sun" class="hidden size-5 dark:inline-block" aria-hidden="true" />
+          </SharedButton>
           <SharedButton
             variant="primary"
             :href="`mailto:${profile.email}`"
-            class="px-4 text-xs sm:text-sm"
+            class="gap-1.5 px-2.5 text-xs whitespace-nowrap sm:gap-2.5 sm:px-4 sm:text-sm"
           >
             Let’s talk <UIcon name="i-lucide-arrow-up-right" class="size-4" aria-hidden="true" />
           </SharedButton>
@@ -96,13 +108,13 @@ onKeyStroke("Escape", () => {
           v-show="menuOpen"
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          class="mobile-navigation absolute inset-x-0 top-full flex flex-col border-b border-black/15 bg-white p-2 md:hidden"
+          class="mobile-navigation border-portfolio-ink/15 bg-portfolio-paper absolute inset-x-0 top-full flex flex-col border-b p-2 md:hidden"
         >
           <NuxtLink
             v-for="item in navigation"
             :key="item.to"
             :to="item.to"
-            class="mobile-nav-link px-4 py-3 text-sm transition-colors hover:bg-black/5"
+            class="mobile-nav-link hover:bg-portfolio-ink/5 px-4 py-3 text-sm transition-colors"
             exact-active-class="bg-portfolio-surface font-semibold"
             @click="menuOpen = false"
           >

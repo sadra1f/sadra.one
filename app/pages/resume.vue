@@ -31,9 +31,9 @@ function printResume() {
 
     <article
       aria-labelledby="resume-name"
-      class="resume-document frame-section section-panel bg-white"
+      class="resume-document frame-section section-panel bg-portfolio-paper"
     >
-      <header class="border-b border-black/10 pb-8">
+      <header class="border-portfolio-ink/10 border-b pb-8">
         <p class="eyebrow mb-3">Curriculum vitae</p>
         <h2 id="resume-name" class="font-editorial text-4xl tracking-tight">{{ resume.name }}</h2>
         <p class="text-portfolio-muted mt-3 text-base">{{ resume.headline }}</p>

@@ -64,12 +64,34 @@
 
 html,
 body {
-  @apply font-default scroll-smooth;
+  @apply bg-portfolio-paper font-default scroll-smooth;
+}
+
+@media screen {
+  html.dark {
+    --color-portfolio-paper: #151515;
+    --color-portfolio-ink: #f0f0f0;
+    --color-portfolio-muted: #b5b5b5;
+    --color-portfolio-soft: #a3a3a3;
+    --color-portfolio-surface: #1d1d1d;
+    --color-portfolio-border: #3b3b3b;
+    --color-portfolio-hatch: #363636;
+    --color-portfolio-hatch-muted: #303030;
+    --color-portfolio-dot: #3b3b3b;
+    --color-portfolio-dot-strong: #424242;
+    --color-portfolio-label: #c7c7c7;
+    --color-portfolio-ink-hover: #d4d4d4;
+    --color-portfolio-control-border: #4a4a4a;
+    --color-portfolio-control-surface: #252525;
+    --color-portfolio-control-hover: #303030;
+
+    color-scheme: dark;
+  }
 }
 
 .portfolio-page {
   --panel-padding: clamp(1.5rem, 4.5vw, 3.5rem);
-  @apply bg-portfolio-paper text-portfolio-ink relative overflow-x-clip scheme-light;
+  @apply bg-portfolio-paper text-portfolio-ink relative overflow-x-clip;
 }
 
 .portfolio-page::before {
@@ -77,11 +99,11 @@ body {
 }
 
 .site-shell {
-  @apply border-portfolio-border relative z-1 mx-auto min-h-svh w-[calc(100%-2*clamp(0.75rem,5vw,5rem))] max-w-296 border-x bg-white;
+  @apply border-portfolio-border bg-portfolio-paper relative z-1 mx-auto min-h-svh w-[calc(100%-2*clamp(0.75rem,5vw,5rem))] max-w-296 border-x;
 }
 
 .site-header {
-  @apply min-h-18 px-[clamp(1rem,3vw,2rem)] py-3;
+  @apply min-h-18 px-[clamp(0.75rem,3vw,2rem)] py-3;
 }
 
 .site-header::before,
@@ -107,7 +129,7 @@ body {
 
 .frame-section::before,
 .frame-section::after {
-  @apply border-portfolio-border pointer-events-none absolute -top-1 z-2 size-1.75 border bg-white content-[''];
+  @apply border-portfolio-border bg-portfolio-paper pointer-events-none absolute -top-1 z-2 size-1.75 border content-[''];
 }
 
 .frame-section::before {
@@ -169,7 +191,7 @@ body {
 }
 
 .portfolio-page ::selection {
-  @apply bg-portfolio-ink text-white;
+  @apply bg-portfolio-ink text-portfolio-paper;
 }
 
 .portfolio-page :is(a, button):focus-visible {
@@ -177,7 +199,7 @@ body {
 }
 
 .skip-link {
-  @apply bg-portfolio-ink absolute top-3 left-4 z-50 transform-[translateY(-200%)] rounded-none px-5 py-3 text-white;
+  @apply bg-portfolio-ink text-portfolio-paper absolute top-3 left-4 z-50 transform-[translateY(-200%)] rounded-none px-5 py-3;
 }
 
 .skip-link:focus {
@@ -206,7 +228,7 @@ body {
 }
 
 .eyebrow {
-  @apply border-portfolio-border text-portfolio-label inline-flex max-w-full items-center gap-2 border bg-white px-1.5 py-1 text-[0.625rem] leading-[1.4] font-medium tracking-[0.09em] uppercase;
+  @apply border-portfolio-border bg-portfolio-paper text-portfolio-label inline-flex max-w-full items-center gap-2 border px-1.5 py-1 text-[0.625rem] leading-[1.4] font-medium tracking-[0.09em] uppercase;
 }
 
 .eyebrow::before {
@@ -244,11 +266,11 @@ body {
 }
 
 .project-art {
-  @apply text-portfolio-ink flex min-h-84 flex-col items-start gap-4 bg-white;
+  @apply bg-portfolio-paper text-portfolio-ink flex min-h-84 flex-col items-start gap-4;
 }
 
 .project-object {
-  @apply h-60 w-[min(80%,15rem)] self-center object-contain;
+  @apply h-60 w-[min(80%,15rem)] self-center object-contain dark:invert;
 }
 
 .project-caption {
@@ -286,7 +308,7 @@ body {
 
 .site-contact::before,
 .site-contact::after {
-  @apply bg-white;
+  @apply bg-portfolio-paper;
 }
 
 @media (min-width: 640px) {
@@ -330,7 +352,7 @@ body {
   html,
   body,
   .portfolio-page {
-    @apply bg-white font-[sans-serif] text-black;
+    @apply bg-white font-[sans-serif] text-black scheme-light;
   }
 
   .site-header,

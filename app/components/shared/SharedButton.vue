@@ -15,14 +15,15 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "justify-center gap-2.5 border border-portfolio-ink bg-portfolio-ink px-5 text-sm text-white shadow-[inset_0_0_0_2px] shadow-white/9 transition-[box-shadow,background-color,filter] duration-180 ease-[ease] hover:bg-portfolio-ink-hover hover:text-white active:text-white disabled:text-white aria-disabled:text-white",
+    "justify-center gap-2.5 border border-portfolio-ink bg-portfolio-ink px-5 text-sm text-portfolio-paper shadow-[inset_0_0_0_2px] shadow-portfolio-paper/9 transition-[box-shadow,background-color,filter] duration-180 ease-[ease] hover:bg-portfolio-ink-hover hover:text-portfolio-paper active:text-portfolio-paper disabled:text-portfolio-paper aria-disabled:text-portfolio-paper",
   secondary:
-    "justify-center gap-2.5 border border-portfolio-control-border bg-linear-to-b from-white to-portfolio-control-surface px-5 text-sm shadow-[inset_0_0_0_2px] shadow-white transition-[box-shadow,background-color,filter] duration-180 ease-[ease] hover:bg-portfolio-control-hover hover:bg-none",
+    "justify-center gap-2.5 border border-portfolio-control-border bg-linear-to-b from-portfolio-paper to-portfolio-control-surface px-5 text-sm shadow-[inset_0_0_0_2px] shadow-portfolio-paper transition-[box-shadow,background-color,filter] duration-180 ease-[ease] hover:bg-portfolio-control-hover hover:bg-none",
   link: "gap-2 text-portfolio-ink underline-offset-4 hover:text-portfolio-ink hover:underline active:text-portfolio-ink",
   filter:
     "justify-center gap-3 border border-portfolio-soft bg-portfolio-paper px-3.5 py-2.5 text-[0.8125rem] text-portfolio-muted transition-[color,background-color,border-color] duration-180 ease-[ease] hover:bg-portfolio-surface hover:text-portfolio-ink active:text-portfolio-ink aria-pressed:border-portfolio-ink aria-pressed:bg-portfolio-ink aria-pressed:text-portfolio-paper aria-pressed:hover:bg-portfolio-ink aria-pressed:hover:text-portfolio-paper aria-pressed:active:text-portfolio-paper",
-  icon: "size-11 justify-center gap-0 border border-black/15 hover:bg-black/5",
-  social: "size-11 justify-center gap-0 border border-black/15 bg-white hover:bg-black/5",
+  icon: "size-11 justify-center gap-0 border border-portfolio-ink/15 hover:bg-portfolio-ink/5",
+  social:
+    "size-11 justify-center gap-0 border border-portfolio-ink/15 bg-portfolio-paper hover:bg-portfolio-ink/5",
 };
 </script>
 

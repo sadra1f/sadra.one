@@ -143,7 +143,7 @@ const toolkit = [
           v-for="social in socialLinks"
           :key="social.label"
           :href="social.href"
-          class="group flex min-h-18 items-center gap-3 border-b border-black/10 text-sm"
+          class="group border-portfolio-ink/10 flex min-h-18 items-center gap-3 border-b text-sm"
         >
           <UIcon :name="social.icon" class="size-5" aria-hidden="true" />
           <span>{{ social.label }}</span>

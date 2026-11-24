@@ -80,8 +80,10 @@ export default defineNuxtConfig({
       { name: "Libre Baskerville Variable", provider: "npm", global: true },
     ],
   },
-  ui: {
-    colorMode: false,
+  colorMode: {
+    preference: "system",
+    fallback: "light",
+    storage: "localStorage",
   },
   icon: {
     clientBundle: {
