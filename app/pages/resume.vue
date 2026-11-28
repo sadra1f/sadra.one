@@ -40,10 +40,9 @@ function printResume() {
         <div
           class="resume-contact text-portfolio-muted mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm"
         >
-          <a :href="`mailto:${resume.contact.email}`" class="break-all hover:underline">{{
-            resume.contact.email
-          }}</a>
-          <a :href="resume.contact.phoneHref" class="hover:underline">{{ resume.contact.phone }}</a>
+          <a :href="`mailto:${resume.contact.email}`" class="break-all hover:underline">
+            {{ resume.contact.email }}
+          </a>
           <a :href="resume.contact.github" rel="nofollow" class="hover:underline">
             github.com/sadra1f
           </a>

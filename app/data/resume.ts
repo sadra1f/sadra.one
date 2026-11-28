@@ -3,8 +3,6 @@ export const resume = {
   headline: "Full Stack Software Developer",
   contact: {
     email: "sadrasaderi@gmail.com",
-    phone: "+98 935 563 4279",
-    phoneHref: "tel:+989355634279",
     github: "https://github.com/sadra1f",
   },
   summary:
